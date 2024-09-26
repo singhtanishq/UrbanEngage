@@ -1,0 +1,147 @@
+.forums {
+    padding: 20px;
+    background: linear-gradient(to bottom, hsl(186, 100%, 87%), #ffd8d8);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.forums-container {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 300px;
+}
+
+.post-thread-container,
+.discussion-container {
+    width: 48%;
+    margin: 0 1%;
+    padding: 45px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 45px;
+    height: calc(80vh - 120px);
+    display: flex;
+    flex-direction: column;
+}
+
+.post-thread-container {
+    overflow-y: auto;
+}
+
+.discussion-container {
+    height: calc(80vh - 120px);
+    overflow: hidden;
+}
+
+.discussion-header {
+    margin-bottom: 10px;
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    z-index: 10;
+}
+
+.discussion-content {
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.post-thread-container::-webkit-scrollbar,
+.discussion-content::-webkit-scrollbar {
+    width: 4px;
+}
+
+.post-thread-container::-webkit-scrollbar-thumb,
+.discussion-content::-webkit-scrollbar-thumb {
+    background: rgba(173, 216, 230, 0.8);
+    border-radius: 10px;
+}
+
+.post-thread-container::-webkit-scrollbar-track,
+.discussion-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.post-thread-container:hover::-webkit-scrollbar,
+.discussion-content:hover::-webkit-scrollbar {
+    opacity: 1;
+}
+
+h2 {
+    margin: 0 0 10px;
+}
+
+.input-group {
+    margin: 10px 0;
+}
+
+.input-title,
+.input-author,
+.input-content {
+    height: 25px;
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.input-title:focus,
+.input-author:focus,
+.input-content:focus {
+    border-color: #007bff;
+    border-width: 1.6px;
+    outline: none;
+}
+
+.input-content {
+    height: 120px;
+    resize: none;
+    overflow-y: auto;
+}
+
+.thread {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f0faff;
+    border-radius: 5px;
+}
+
+.thread h3 {
+    margin: 0 0 10px 0;
+    color: #0056b3;
+}
+
+.post {
+    margin: 5px 0;
+    padding: 5px;
+    background-color: #ffffff;
+    border-left: 3px solid #cce5ff;
+    padding-left: 10px;
+}
+
+form {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+}
+
+form button {
+    margin-left: 83%;
+    min-width: 80px;
+    padding: 12px;
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    font-size: medium;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #266fa0;
+}

@@ -1,0 +1,37 @@
+# Node modules
+node_modules/
+frontend/node_modules/
+
+# Build output
+build/
+dist/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+
+# Package lock files
+package-lock.json
+
+# Temporary files
+*.tmp
+*.temp
+
+# IDE or Editor files
+.vscode/
+.idea/
+.DS_Store
+
+# Miscellaneous
+*.bak
+*.swp
+*.swo
+Thumbs.db
+
+# Frontend build files
+frontend/build/
+frontend/.env
