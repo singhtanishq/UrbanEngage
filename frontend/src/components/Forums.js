@@ -12,7 +12,7 @@ const Forums = () => {
     }, []);
 
     const fetchForums = () => {
-        fetch('http://localhost:5000/forums')
+        fetch('${process.env.REACT_APP_BASE_URL}/forums')
             .then(res => res.json())
             .then(data => setForums(data))
             .catch(err => console.error('Error fetching forums:', err));
@@ -22,7 +22,7 @@ const Forums = () => {
         e.preventDefault();
         const newPost = { title, author, content };
 
-        fetch('http://localhost:5000/forums/add', {
+        fetch('${process.env.REACT_APP_BASE_URL}/forums/add', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

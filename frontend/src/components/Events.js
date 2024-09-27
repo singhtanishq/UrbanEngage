@@ -11,7 +11,7 @@ const Events = () => {
     }, [sortBy, order]);
 
     const fetchEvents = () => {
-        fetch(`http://localhost:5000/events?sortBy=${sortBy}&order=${order}`)
+        fetch(`${process.env.REACT_APP_BASE_URL}/events?sortBy=${sortBy}&order=${order}`)
             .then(res => res.json())
             .then(data => setEvents(data))
             .catch(err => console.error('Error fetching events:', err));
@@ -26,7 +26,7 @@ const Events = () => {
     };
 
     const handleRSVP = (id) => {
-        fetch(`http://localhost:5000/events/rsvp/${id}`, {
+        fetch(`${process.env.REACT_APP_BASE_URL}/events/rsvp/${id}`, {
             method: 'POST',
         })
             .then(() => fetchEvents())
