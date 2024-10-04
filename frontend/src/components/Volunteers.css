@@ -1,0 +1,189 @@
+.volunteers-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.volunteers-title {
+    margin-top: 66px;
+    font-size: 34px;
+    color: #333;
+    text-align: center;
+    background: white; 
+    padding: 35px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-left: -15%;
+    width: 125%;
+    margin-bottom: 20px;
+}
+
+.success-message, .error-message {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.success-message {
+    color: #4CAF50;
+}
+
+.error-message {
+    color: #f44336;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 18px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+button:hover {
+    background-color: #266fa0;
+}
+
+.filter-sort {
+    display: flex;
+    gap: 15px;
+}
+
+select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.volunteer-form {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.volunteer-form input,
+.volunteer-form textarea {
+    margin-left: 40px;
+    margin-top: 12px;
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.volunteer-form select {
+    margin-left: 40px;
+    margin-top: 10px;
+    width: 91.80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+.volunteer-form button {
+    margin-left: 986px;
+    margin-top: 22px;
+    margin-bottom: 10px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 18px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.volunteer-form button:hover {
+    background-color: #45a049;
+}
+
+.volunteers-list-container::-webkit-scrollbar {
+    width: 4px;
+}
+
+.volunteers-list-container::-webkit-scrollbar-thumb {
+    background: rgba(173, 216, 230, 0.5);
+    border-radius: 10px;
+}
+
+.volunteers-list-container::-webkit-scrollbar-track {
+    background: rgba(173, 216, 230, 0.1);
+}
+
+.volunteers-list-container {
+    padding-right: 10px;
+    margin-top: 25px;
+    position: relative;
+    max-height: 450px;
+    overflow-y: auto;
+}
+
+.no-volunteers-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.volunteers-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.volunteer-details {
+    padding: 22px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin: 20px 0;
+    position: relative;
+    transition: 250ms;
+}
+
+.volunteer-details:hover {
+    transform: scale(0.99);
+    cursor: pointer;
+}
+
+.volunteer-tag-container {
+    position: absolute;
+    top: 32px;
+    right: 10px;
+}
+
+.volunteer-tag {
+    padding: 8px 10px;
+    border-radius: 25px;
+    color: white;
+}
+
+.category-education {
+    background-color: #2196F3;
+}
+
+.category-community-service {
+    background-color: #FF9800;
+}
+
+.category-healthcare {
+    background-color: #4CAF50;
+}

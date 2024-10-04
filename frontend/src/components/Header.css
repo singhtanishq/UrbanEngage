@@ -1,0 +1,118 @@
+.header {
+    background-color: #007500;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text:hover {
+    cursor: pointer;
+}
+
+.logo h1 {
+    color: #ffd700;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.logo h2 {
+    color: white;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav-links li {
+    margin: 5px 10px;
+}
+
+.nav-links li:last-child {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffd700;
+}
+
+.account-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 40px;
+    margin-top: -6px;
+    transition: opacity 0.3s;
+}
+
+.account-icon:hover {
+    content: url('../assets/accs.png');
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links li:last-child {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1rem;
+    }
+
+    .nav-links li {
+        font-size: 0.9rem;
+    }
+}
