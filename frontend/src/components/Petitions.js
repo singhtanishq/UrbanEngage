@@ -13,7 +13,7 @@ const Petitions = () => {
     }, [sortBy, order]);
 
     const fetchPetitions = () => {
-        fetch(`http://localhost:5000/petitions?sortBy=${sortBy}&order=${order}`)
+        fetch(`${process.env.REACT_APP_BASE_URL}/petitions?sortBy=${sortBy}&order=${order}`)
             .then(res => res.json())
             .then(data => setPetitions(data))
             .catch(err => console.error('Error fetching petitions:', err));
@@ -23,7 +23,7 @@ const Petitions = () => {
         if (petitionContent.trim()) {
             const newPetition = { content: petitionContent };
 
-            fetch('http://localhost:5000/petitions/add', {
+            fetch('${process.env.REACT_APP_BASE_URL}/petitions/add', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newPetition),
@@ -38,7 +38,7 @@ const Petitions = () => {
     };
 
     const handleSignPetition = (id) => {
-        fetch(`http://localhost:5000/petitions/sign/${id}`, {
+        fetch(`${process.env.REACT_APP_BASE_URL}/petitions/sign/${id}`, {
             method: 'POST',
         })
             .then(res => res.json())

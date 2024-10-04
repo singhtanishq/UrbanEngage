@@ -18,7 +18,7 @@ const Issues = () => {
     }, [sortBy, order]);
 
     const fetchIssues = () => {
-        fetch(`http://localhost:5000/issues?sortBy=${sortBy}&order=${order}`)
+        fetch(`${process.env.REACT_APP_BASE_URL}/issues?sortBy=${sortBy}&order=${order}`)
             .then(res => res.json())
             .then(data => setIssues(data))
             .catch(err => console.error('Error fetching issues:', err));
@@ -28,7 +28,7 @@ const Issues = () => {
         if (issueContent.trim()) {
             const newIssue = { content: issueContent, category };
 
-            fetch('http://localhost:5000/issues/add', {
+            fetch('${process.env.REACT_APP_BASE_URL}/issues/add', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newIssue),
@@ -51,7 +51,7 @@ const Issues = () => {
     };
 
     const handleUpvote = (id) => {
-        fetch(`http://localhost:5000/issues/upvote/${id}`, {
+        fetch(`${process.env.REACT_APP_BASE_URL}/issues/upvote/${id}`, {
             method: 'POST',
         })
             .then(res => res.json())
@@ -63,7 +63,7 @@ const Issues = () => {
         if (commentContent.trim()) {
             const newComment = { author: 'Anonymous', content: commentContent };
 
-            fetch(`http://localhost:5000/issues/comment/${issueId}`, {
+            fetch(`${process.env.REACT_APP_BASE_URL}/issues/comment/${issueId}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newComment),
