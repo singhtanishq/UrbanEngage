@@ -20,6 +20,12 @@ router.route('/add').post((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/delete').delete((req, res) => {
+    Events.deleteMany({})
+        .then(() => res.json('All events deleted!'))
+        .catch(err => res.status(400).json('Error: ' + err));
+});
+
 router.route('/rsvp/:id').post((req, res) => {
     Events.findById(req.params.id)
         .then(event => {

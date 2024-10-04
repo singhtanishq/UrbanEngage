@@ -47,10 +47,4 @@ router.route('/comment/:id').post((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.route('/delete').delete((req, res) => {
-    Issues.deleteMany({})
-        .then(() => res.json('All issues deleted!'))
-        .catch(err => res.status(400).json('Error: ' + err));
-});
-
 module.exports = router;
