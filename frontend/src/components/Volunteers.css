@@ -156,6 +156,12 @@ textarea {
     border-radius: 10px;
     margin: 20px 0;
     position: relative;
+    transition: 250ms;
+}
+
+.volunteer-details:hover {
+    transform: scale(0.99);
+    cursor: pointer;
 }
 
 .volunteer-tag-container {

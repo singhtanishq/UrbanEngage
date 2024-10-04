@@ -1,37 +1,53 @@
-# Node modules
+# Node.js
 node_modules/
-frontend/node_modules/
-
-# Build output
-build/
-dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # Logs
 logs
 *.log
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+log/
 
-# Environment variables
+# dotenv environment variables
 .env
 
-# Package lock files
-package-lock.json
+# Build files
+build/
+dist/
+tmp/
+temp/
 
-# Temporary files
-*.tmp
-*.temp
-
-# IDE or Editor files
+# Editor/IDE files
 .vscode/
 .idea/
-.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
 
-# Miscellaneous
-*.bak
-*.swp
-*.swo
+# Operating system files
+.DS_Store
 Thumbs.db
 
-# Frontend build files
-frontend/build/
-frontend/.env
+# Coverage directory used by testing tools
+coverage/
+
+# Parcel cache
+.cache/
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Mac system files
+._*
+*.swp
+
+# Miscellaneous
+.pnpm-debug.log
