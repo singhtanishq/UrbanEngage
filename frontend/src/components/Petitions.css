@@ -96,6 +96,12 @@
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: 500ms;
+}
+
+.petition-card:hover {
+    cursor: pointer;
+    transform: scale(0.96);
 }
 
 .petition-content {
