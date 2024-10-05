@@ -31,6 +31,10 @@ connection.once('open', () => {
 
 connection.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
+app.get('/', (req, res) => {
+    res.send("Backend is working!");
+});
+
 app.use('/home', homeRouter);
 app.use('/dashboard', dashboardRouter);
 app.use('/forums', forumsRouter);
