@@ -33,7 +33,7 @@ const Accounts = () => {
             setMessage('Invalid email address');
             return;
         }
-        axios.post('http://localhost:5000/accounts/login', { email, password })
+        axios.post(`${process.env.REACT_APP_PORT_URL}/accounts/login`, { email, password })
             .then(response => {
                 const userData = response.data;
                 setUser(userData);
@@ -64,7 +64,7 @@ const Accounts = () => {
             setMessage('Passwords do not match');
             return;
         }
-        axios.post('http://localhost:5000/accounts/signup', { name, email, password })
+        axios.post(`${process.env.REACT_APP_PORT_URL}/accounts/signup`, { name, email, password })
             .then(() => {
                 setIsLogin(true);
                 setMessage('Sign up successful');
@@ -110,7 +110,7 @@ const Accounts = () => {
             token: user.token 
         };
     
-        axios.post('http://localhost:5000/accounts/update', updatedData)
+        axios.post(`${process.env.REACT_APP_PORT_URL}/accounts/update`, updatedData)
             .then(response => {
                 setUser({ ...user, name: response.data.name });
                 setIsEditing(false);

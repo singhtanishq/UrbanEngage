@@ -22,7 +22,7 @@ const Volunteers = () => {
     }, [filterCategory, sortBy, order]);
 
     const fetchVolunteers = () => {
-        let url = `http://localhost:5000/volunteers?sortBy=${sortBy}&order=${order}`;
+        let url = `${process.env.REACT_APP_PORT_URL}/volunteers?sortBy=${sortBy}&order=${order}`;
         if (filterCategory) url += `&category=${filterCategory}`;
 
         fetch(url)
@@ -43,7 +43,7 @@ const Volunteers = () => {
         e.preventDefault();
 
         if (newVolunteer.name.trim() && newVolunteer.email.trim()) {
-            fetch('http://localhost:5000/volunteers/add', {
+            fetch(`${process.env.REACT_APP_PORT_URL}/volunteers/add`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newVolunteer),

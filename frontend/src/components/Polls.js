@@ -16,7 +16,7 @@ const Polls = () => {
   }, []);
 
   const fetchPolls = () => {
-    fetch('http://localhost:5000/polls')
+    fetch(`${process.env.REACT_APP_PORT_URL}/polls`)
       .then(res => {
         if (!res.ok) {
           throw new Error('Network response was not ok');
@@ -60,7 +60,7 @@ const Polls = () => {
     }
     setError('');
 
-    fetch('http://localhost:5000/polls/add', {
+    fetch(`${process.env.REACT_APP_PORT_URL}/polls/add`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ const Polls = () => {
   };
 
   const vote = (pollId, optionIndex) => {
-    fetch(`http://localhost:5000/polls/vote/${pollId}`, {
+    fetch(`${process.env.REACT_APP_PORT_URL}/polls/vote/${pollId}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
