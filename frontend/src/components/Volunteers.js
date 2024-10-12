@@ -17,10 +17,6 @@ const Volunteers = () => {
     const [sortBy, setSortBy] = useState('createdAt');
     const [order, setOrder] = useState('desc');
 
-    useEffect(() => {
-        fetchVolunteers();
-    }, [filterCategory, sortBy, order]);
-
     const fetchVolunteers = () => {
         let url = `${process.env.REACT_APP_PORT_URL}/volunteers?sortBy=${sortBy}&order=${order}`;
         if (filterCategory) url += `&category=${filterCategory}`;
@@ -30,6 +26,10 @@ const Volunteers = () => {
             .then(data => setVolunteers(data))
             .catch(err => console.error('Error fetching volunteers:', err));
     };
+
+    useEffect(() => {
+        fetchVolunteers();
+    }, [filterCategory, sortBy, order, fetchVolunteers]);
 
     const handleInputChange = (e) => {
         setNewVolunteer({
