@@ -8,7 +8,7 @@ const Events = () => {
 
     useEffect(() => {
         fetchEvents();
-    }, [sortBy, order]);
+    }, [sortBy, order, fetchEvents]);
 
     const fetchEvents = () => {
         fetch(`${process.env.REACT_APP_PORT_URL}/events?sortBy=${sortBy}&order=${order}`)
