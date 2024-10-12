@@ -2,11 +2,9 @@ import React, { useState, useEffect, useMemo } from 'react';
 import './Home.css';
 
 const Home = () => {
-  const [currentTime, setCurrentTime] = useState('');
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
 
-  // Format the date with suffix for the day (e.g., 1st, 2nd, etc.)
   const getDayWithSuffix = (day) => {
     if (day > 3 && day < 21) return `${day}th`;
     switch (day % 10) {
@@ -17,28 +15,6 @@ const Home = () => {
     }
   };
 
-  // Set the time every second
-  useEffect(() => {
-    const updateDateTime = () => {
-      const now = new Date();
-      const day = getDayWithSuffix(now.getDate());
-      const month = now.toLocaleString('default', { month: 'long' });
-      const year = now.getFullYear();
-      const hours = now.getHours().toString().padStart(2, '0');
-      const minutes = now.getMinutes().toString().padStart(2, '0');
-      const time = `${hours}:${minutes} UTC`;
-      const formattedDateTime = `${day} ${month}, ${year} ${time}`;
-
-      setCurrentTime(formattedDateTime);
-    };
-
-    updateDateTime();
-    const interval = setInterval(updateDateTime, 60000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  // UseMemo for the slides array to prevent re-creating it on every render
   const slides = useMemo(() => [
     <>Stay engaged with your <span className="highlight-box">community</span>!</>,
     <>Upcoming <span className="highlight-box">events</span> are just a click away!</>,
@@ -46,7 +22,6 @@ const Home = () => {
     <>Join <span className="highlight-box">discussions</span> in our forums.</>
   ], []);
 
-  // Handle the carousel slide interval
   useEffect(() => {
     const slideInterval = setInterval(() => {
       setCurrentSlideIndex((prevIndex) => (prevIndex + 1) % slides.length);
@@ -55,7 +30,6 @@ const Home = () => {
     return () => clearInterval(slideInterval);
   }, [slides.length]);
 
-  // Track the mouse movement
   const handleMouseMove = (e) => {
     const rect = e.target.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 100;
@@ -73,7 +47,6 @@ const Home = () => {
         <h2>Welcome to <span className="urban-engage-title">Urban Engage</span></h2>
         <p className="home-tagline"><strong>Your platform for community engagement and local governance.</strong></p>
 
-        {/* Carousel container for the slides */}
         <div className="carousel-container">
           {slides.map((slide, index) => (
             <div key={index} className={`carousel-slide ${index === currentSlideIndex ? 'active' : ''}`}>
@@ -82,7 +55,6 @@ const Home = () => {
           ))}
         </div>
 
-        {/* Navigation boxes */}
         <div className="main-container">
           <a href='/issues' className="box normal">Issues</a>
           <a href='/dashboard' className="box double">Dashboard</a>
@@ -93,14 +65,8 @@ const Home = () => {
           <a href='/polls' className="box normal">Polls</a>
         </div>
 
-        {/* Search box */}
         <div className="search-container">
           <input type="text" placeholder="Search..." />
-        </div>
-
-        {/* Time display */}
-        <div className="time-display">
-          <p>Current Time: {currentTime}</p>
         </div>
       </div>
     </div>
