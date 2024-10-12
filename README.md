@@ -1,11 +1,9 @@
 # Urban Engage
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/your-badge/status)](https://urbanengage.netlify.app/)
-
 Urban Engage is an innovative e-governance platform designed to facilitate communication and interaction between citizens and local authorities. The platform offers various modules to improve civic engagement, issue reporting, and community building.
 
-Visit the deployed application [here](https://urbanengage.netlify.app/) (desktop recommended).
-
+To visit the deployed application [Clicke Here](https://urbanengage.netlify.app/)  (desktop recommended).
+<br><br>
 ## Table of Contents
 
 - [Project Overview](#project-overview)
@@ -20,7 +18,6 @@ Visit the deployed application [here](https://urbanengage.netlify.app/) (desktop
   - [Polls](#polls)
   - [Volunteers](#volunteers)
   - [Accounts](#accounts)
-- [Screenshots](#screenshots)
 - [Installation and Setup](#installation-and-setup)
 - [Contributing](#contributing)
 - [License](#license)
@@ -53,7 +50,7 @@ The following technologies were used in the development of this project:
 - Users can see the latest updates and news relevant to their community.
 - A search bar is integrated to allow easy navigation across the platform.
 
-![Home](./screenshots/home.png)
+![Home](./images/home.png)
 
 ### Dashboard
 
@@ -61,7 +58,7 @@ The following technologies were used in the development of this project:
 - Quick stats on issues reported, petitions signed, and events RSVP’d are displayed.
 - Users can also manage their profile settings directly from the dashboard.
 
-![Dashboard](./screenshots/dashboard.png)
+![Dashboard](./images/dashboard.png)
 
 ### Forums
 
@@ -70,7 +67,7 @@ The following technologies were used in the development of this project:
 - User profiles are visible along with reputation scores based on activity.
 - Moderation tools allow for content reporting and administrative control.
 
-![Forums](./screenshots/forums.png)
+![Forums](./images/forums.png)
 
 ### Events
 
@@ -78,7 +75,7 @@ The following technologies were used in the development of this project:
 - Event details include date, time, location, and description, with an option to RSVP.
 - Users with the necessary permissions can create and manage events.
 
-![Events](./screenshots/events.png)
+![Events](./images/events.png)
 
 ### Issues
 
@@ -87,7 +84,7 @@ The following technologies were used in the development of this project:
 - Users can comment, upvote, and track the resolution of reported issues.
 - Analytics tools provide historical data on issue trends.
 
-![Issues](./screenshots/issues.png)
+![Issues](./images/issues.png)
 
 ### Petitions
 
@@ -95,7 +92,7 @@ The following technologies were used in the development of this project:
 - Each petition includes details such as goals, description, and deadlines.
 - Progress is tracked, and the number of signatures is displayed in real-time.
 
-![Petitions](./screenshots/petitions.png)
+![Petitions](./images/petitions.png)
 
 ### Polls
 
@@ -103,7 +100,7 @@ The following technologies were used in the development of this project:
 - Real-time results are displayed after votes are cast.
 - Users can also create polls on subjects of community interest.
 
-![Polls](./screenshots/polls.png)
+![Polls](./images/polls.png)
 
 ### Volunteers
 
@@ -111,7 +108,7 @@ The following technologies were used in the development of this project:
 - Users can sign up to volunteer for events or initiatives and track their activity.
 - Volunteer coordination tools assist organizers in managing volunteer projects efficiently.
 
-![Volunteers](./screenshots/volunteers.png)
+![Volunteers](./images/volunteers.png)
 
 ### Accounts
 
@@ -119,22 +116,8 @@ The following technologies were used in the development of this project:
 - Users can update their personal information, manage privacy settings, and view account history.
 - Real-time authentication ensures data security and privacy.
 
-![Accounts](./screenshots/accounts.png)
-
-## Screenshots
-
-You can view screenshots of the application in the `/screenshots/` folder:
-
-- Home Page: `home.png`
-- Dashboard: `dashboard.png`
-- Forums: `forums.png`
-- Events: `events.png`
-- Issues: `issues.png`
-- Petitions: `petitions.png`
-- Polls: `polls.png`
-- Volunteers: `volunteers.png`
-- Accounts: `accounts.png`
-
+![Accounts](./images/accounts.png)
+<br><br>
 ## Installation and Setup
 
 To get a local copy of this project up and running, follow these simple steps.
@@ -150,8 +133,8 @@ To get a local copy of this project up and running, follow these simple steps.
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/urban-engage.git
-   cd urban-engage
+   git clone https://github.com/singhtanishq/UrbanEngage.git
+   cd UrbanEngage
    ```
 
 2. **Install dependencies for both client and server:**
