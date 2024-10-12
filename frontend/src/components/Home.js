@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './Home.css';
 
 const Home = () => {
-    const [currentTime, setCurrentTime] = useState('');
     const [currentSlide, setCurrentSlide] = useState(0);
     const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
 
