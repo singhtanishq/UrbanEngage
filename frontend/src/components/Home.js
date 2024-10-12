@@ -91,7 +91,7 @@ const Home = () => {
         </div>
 
         <div className="time-display">
-          <p>Current Time: {currentTime}</p>
+          <p>{currentTime}</p>
         </div>
       </div>
     </div>
