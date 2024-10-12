@@ -14,15 +14,15 @@ const Issues = () => {
     const [currentIssueId, setCurrentIssueId] = useState(null);
 
     useEffect(() => {
-        fetchIssues();
-    }, [sortBy, order, fetchIssues]);
+        const fetchIssues = () => {
+            fetch(`${process.env.REACT_APP_PORT_URL}/issues?sortBy=${sortBy}&order=${order}`)
+                .then(res => res.json())
+                .then(data => setIssues(data))
+                .catch(err => console.error('Error fetching issues:', err));
+        };
 
-    const fetchIssues = () => {
-        fetch(`${process.env.REACT_APP_PORT_URL}/issues?sortBy=${sortBy}&order=${order}`)
-            .then(res => res.json())
-            .then(data => setIssues(data))
-            .catch(err => console.error('Error fetching issues:', err));
-    };
+        fetchIssues();
+    }, [sortBy, order]);
 
     const handleAddIssue = () => {
         if (issueContent.trim()) {
@@ -33,10 +33,12 @@ const Issues = () => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newIssue),
             })
-                .then(res => res.json())
                 .then(() => {
                     setIssueContent('');
-                    fetchIssues();
+                    fetch(`${process.env.REACT_APP_PORT_URL}/issues?sortBy=${sortBy}&order=${order}`)
+                        .then(res => res.json())
+                        .then(data => setIssues(data))
+                        .catch(err => console.error('Error fetching issues:', err));
                 })
                 .catch(err => console.error('Error adding issue:', err));
         }
@@ -54,8 +56,12 @@ const Issues = () => {
         fetch(`${process.env.REACT_APP_PORT_URL}/issues/upvote/${id}`, {
             method: 'POST',
         })
-            .then(res => res.json())
-            .then(() => fetchIssues())
+            .then(() => {
+                fetch(`${process.env.REACT_APP_PORT_URL}/issues?sortBy=${sortBy}&order=${order}`)
+                    .then(res => res.json())
+                    .then(data => setIssues(data))
+                    .catch(err => console.error('Error fetching issues:', err));
+            })
             .catch(err => console.error('Error upvoting issue:', err));
     };
 
@@ -70,7 +76,10 @@ const Issues = () => {
             })
                 .then(() => {
                     setCommentContent('');
-                    fetchIssues();
+                    fetch(`${process.env.REACT_APP_PORT_URL}/issues?sortBy=${sortBy}&order=${order}`)
+                        .then(res => res.json())
+                        .then(data => setIssues(data))
+                        .catch(err => console.error('Error fetching issues:', err));
                     setCurrentIssueId(null);
                 })
                 .catch(err => console.error('Error adding comment:', err));
