@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import './Home.css';
 
 const Home = () => {
-  const [currentTime, setCurrentTime] = useState('');
+  const [setCurrentTime] = useState('');
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
 
@@ -89,10 +89,7 @@ const Home = () => {
         <div className="search-container">
           <input type="text" placeholder="Search..." />
         </div>
-
-        <div className="time-display">
-          <p>Current Time: {currentTime}</p>
-        </div>
+          
       </div>
     </div>
   );
