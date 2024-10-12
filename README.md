@@ -2,7 +2,7 @@
 
 Urban Engage is an innovative e-governance platform designed to facilitate communication and interaction between citizens and local authorities. The platform offers various modules to improve civic engagement, issue reporting, and community building.
 
-To visit the deployed application [Clicke Here](https://urbanengage.netlify.app/)  (desktop recommended).
+To visit the deployed application [Clicke Here](https://urbanengage.netlify.app/) &nbsp; (Desktop recommended).
 <br><br>
 ## Table of Contents
 
@@ -21,13 +21,13 @@ To visit the deployed application [Clicke Here](https://urbanengage.netlify.app/
 - [Installation and Setup](#installation-and-setup)
 - [Contributing](#contributing)
 - [License](#license)
-
+<br><br>
 ## Project Overview
 
 Urban Engage is a responsive and scalable web application built using the MERN stack (MongoDB, Express.js, React, and Node.js). The platform provides a comprehensive e-governance solution for citizens to report issues, participate in community discussions, create petitions, and engage with local events. Urban Engage simplifies community engagement by centralizing communication channels and offering tools for better collaboration.
 
 The application achieves a high level of efficiency and performance through asynchronous communication between the client and server, optimized database queries, and responsive front-end design techniques. It is designed to handle large amounts of data and user interactions while ensuring a seamless user experience.
-
+<br><br>
 ## Technologies Used
 
 The following technologies were used in the development of this project:
@@ -40,7 +40,7 @@ The following technologies were used in the development of this project:
   - Frontend: [Netlify](https://www.netlify.com/)
   - Backend: [Render](https://render.com/)
 - **Version Control**: Git, GitHub
-
+<br><br>
 ## Features
 
 ### Home
@@ -169,7 +169,7 @@ To get a local copy of this project up and running, follow these simple steps.
    ```
 
    The application will run on `localhost:3000` for the frontend and `localhost:5000` for the backend.
-
+<br><br>
 ## Contributing
 
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -181,7 +181,7 @@ To contribute:
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
+<br><br>
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
