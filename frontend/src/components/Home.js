@@ -32,7 +32,7 @@ const Home = () => {
             const minutes = now.getMinutes().toString().padStart(2, '0');
             const time = `${hours}:${minutes} UTC`;
             const formattedDateTime = `${day} ${month}, ${year} ${time}`;
-
+            
             setCurrentTime(formattedDateTime);
         };
 
@@ -46,7 +46,7 @@ const Home = () => {
             clearInterval(interval);
             clearInterval(slideInterval);
         };
-    }, []);
+    }, [slides]); 
 
     const handleMouseMove = (e) => {
         const rect = e.target.getBoundingClientRect();
@@ -64,7 +64,6 @@ const Home = () => {
             <div className="home-content">
                 <h2>Welcome to <span className="urban-engage-title">Urban Engage</span></h2>
                 <p className="home-tagline"><strong>Your platform for community engagement and local governance.</strong></p>
-
                 <div className="carousel-container">
                     {slides.map((slide, index) => (
                         <div key={index} className={`carousel-slide ${index === currentSlide ? 'active' : ''}`}>
@@ -72,7 +71,6 @@ const Home = () => {
                         </div>
                     ))}
                 </div>
-
                 <div className="main-container">
                     <a href='/issues' className="box normal">Issues</a>
                     <a href='/dashboard' className="box double">Dashboard</a>
@@ -82,7 +80,6 @@ const Home = () => {
                     <a href='/volunteers' className="box normal">Volunteers</a>
                     <a href='/polls' className="box normal">Polls</a>
                 </div>
-
                 <div className="search-container">
                     <input type="text" placeholder="Search..." />
                 </div>
