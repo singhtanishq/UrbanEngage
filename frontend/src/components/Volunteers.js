@@ -19,7 +19,7 @@ const Volunteers = () => {
 
     useEffect(() => {
         fetchVolunteers();
-    }, [filterCategory, sortBy, order, fetchVolunteers]);
+    }, [filterCategory, sortBy, order]);
 
     const fetchVolunteers = () => {
         let url = `${process.env.REACT_APP_PORT_URL}/volunteers?sortBy=${sortBy}&order=${order}`;
