@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './Volunteers.css';
 
 const Volunteers = () => {
@@ -17,11 +17,8 @@ const Volunteers = () => {
     const [sortBy, setSortBy] = useState('createdAt');
     const [order, setOrder] = useState('desc');
 
-    useEffect(() => {
-        fetchVolunteers();
-    }, [filterCategory, sortBy, order, fetchVolunteers]);
-
-    const fetchVolunteers = () => {
+    // Memoize the fetchVolunteers function using useCallback
+    const fetchVolunteers = useCallback(() => {
         let url = `${process.env.REACT_APP_PORT_URL}/volunteers?sortBy=${sortBy}&order=${order}`;
         if (filterCategory) url += `&category=${filterCategory}`;
 
@@ -29,7 +26,11 @@ const Volunteers = () => {
             .then(res => res.json())
             .then(data => setVolunteers(data))
             .catch(err => console.error('Error fetching volunteers:', err));
-    };
+    }, [filterCategory, sortBy, order]);
+
+    useEffect(() => {
+        fetchVolunteers();
+    }, [filterCategory, sortBy, order, fetchVolunteers]);
 
     const handleInputChange = (e) => {
         setNewVolunteer({
@@ -105,9 +106,8 @@ const Volunteers = () => {
                         </div>
                     </>
                 )}
-        
             </div>
-                
+
             {formVisible ? (
                 <form className="volunteer-form" onSubmit={handleFormSubmit}>
                     <input
