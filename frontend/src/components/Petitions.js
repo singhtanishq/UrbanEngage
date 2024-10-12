@@ -9,15 +9,15 @@ const Petitions = () => {
     const [order, setOrder] = useState('desc');
 
     useEffect(() => {
-        fetchPetitions();
-    }, [sortBy, order, fetchPetitions]);
+        const fetchPetitions = () => {
+            fetch(`${process.env.REACT_APP_PORT_URL}/petitions?sortBy=${sortBy}&order=${order}`)
+                .then(res => res.json())
+                .then(data => setPetitions(data))
+                .catch(err => console.error('Error fetching petitions:', err));
+        };
 
-    const fetchPetitions = () => {
-        fetch(`${process.env.REACT_APP_PORT_URL}/petitions?sortBy=${sortBy}&order=${order}`)
-            .then(res => res.json())
-            .then(data => setPetitions(data))
-            .catch(err => console.error('Error fetching petitions:', err));
-    };
+        fetchPetitions();
+    }, [sortBy, order]);
 
     const handleAddPetition = () => {
         if (petitionContent.trim()) {
@@ -28,10 +28,12 @@ const Petitions = () => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newPetition),
             })
-                .then(res => res.json())
                 .then(() => {
                     setPetitionContent('');
-                    fetchPetitions();
+                    fetch(`${process.env.REACT_APP_PORT_URL}/petitions?sortBy=${sortBy}&order=${order}`)
+                        .then(res => res.json())
+                        .then(data => setPetitions(data))
+                        .catch(err => console.error('Error fetching petitions:', err));
                 })
                 .catch(err => console.error('Error adding petition:', err));
         }
@@ -41,8 +43,12 @@ const Petitions = () => {
         fetch(`${process.env.REACT_APP_PORT_URL}/petitions/sign/${id}`, {
             method: 'POST',
         })
-            .then(res => res.json())
-            .then(() => fetchPetitions())
+            .then(() => {
+                fetch(`${process.env.REACT_APP_PORT_URL}/petitions?sortBy=${sortBy}&order=${order}`)
+                    .then(res => res.json())
+                    .then(data => setPetitions(data))
+                    .catch(err => console.error('Error fetching petitions:', err));
+            })
             .catch(err => console.error('Error signing petition:', err));
     };
 
