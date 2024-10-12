@@ -10,7 +10,7 @@ const Petitions = () => {
 
     useEffect(() => {
         fetchPetitions();
-    }, [sortBy, order]);
+    }, [sortBy, order, fetchPetitions]);
 
     const fetchPetitions = () => {
         fetch(`${process.env.REACT_APP_PORT_URL}/petitions?sortBy=${sortBy}&order=${order}`)
