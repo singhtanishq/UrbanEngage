@@ -31,7 +31,7 @@ router.post('/login', async (req, res) => {
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) return res.status(400).json({ message: 'Invalid credentials' });
 
-        const token = jwt.sign({ id: user._id }, 'your_jwt_secret', { expiresIn: '1h' });
+        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
         res.json({ name: user.name, email: user.email, token });
     } catch (err) {
         res.status(500).json({ message: 'Server error' });
@@ -42,7 +42,7 @@ router.post('/update', async (req, res) => {
     const { name, password, token } = req.body;
 
     try {
-        const decoded = jwt.verify(token, 'your_jwt_secret');
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
         const user = await User.findById(decoded.id);
 
         if (!user) return res.status(400).json({ message: 'User not found' });
