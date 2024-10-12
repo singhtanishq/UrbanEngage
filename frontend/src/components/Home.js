@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import './Home.css';
 
 const Home = () => {
+  const [currentTime, setCurrentTime] = useState('');
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
 
@@ -14,6 +15,26 @@ const Home = () => {
       default: return `${day}th`;
     }
   };
+
+  useEffect(() => {
+    const updateDateTime = () => {
+      const now = new Date();
+      const day = getDayWithSuffix(now.getDate());
+      const month = now.toLocaleString('default', { month: 'long' });
+      const year = now.getFullYear();
+      const hours = now.getHours().toString().padStart(2, '0');
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const time = `${hours}:${minutes} UTC`;
+      const formattedDateTime = `${day} ${month}, ${year} ${time}`;
+
+      setCurrentTime(formattedDateTime);
+    };
+
+    updateDateTime();
+    const interval = setInterval(updateDateTime, 60000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const slides = useMemo(() => [
     <>Stay engaged with your <span className="highlight-box">community</span>!</>,
@@ -67,6 +88,10 @@ const Home = () => {
 
         <div className="search-container">
           <input type="text" placeholder="Search..." />
+        </div>
+
+        <div className="time-display">
+          <p>Current Time: {currentTime}</p>
         </div>
       </div>
     </div>
