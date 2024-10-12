@@ -7,15 +7,15 @@ const Events = () => {
     const [order, setOrder] = useState('desc');
 
     useEffect(() => {
-        fetchEvents();
-    }, [sortBy, order, fetchEvents]);
+        const fetchEvents = () => {
+            fetch(`${process.env.REACT_APP_PORT_URL}/events?sortBy=${sortBy}&order=${order}`)
+                .then(res => res.json())
+                .then(data => setEvents(data))
+                .catch(err => console.error('Error fetching events:', err));
+        };
 
-    const fetchEvents = () => {
-        fetch(`${process.env.REACT_APP_PORT_URL}/events?sortBy=${sortBy}&order=${order}`)
-            .then(res => res.json())
-            .then(data => setEvents(data))
-            .catch(err => console.error('Error fetching events:', err));
-    };
+        fetchEvents();
+    }, [sortBy, order]);
 
     const handleSortChange = (e) => {
         setSortBy(e.target.value);
@@ -29,7 +29,12 @@ const Events = () => {
         fetch(`${process.env.REACT_APP_PORT_URL}/events/rsvp/${id}`, {
             method: 'POST',
         })
-            .then(() => fetchEvents())
+            .then(() => {
+                fetch(`${process.env.REACT_APP_PORT_URL}/events?sortBy=${sortBy}&order=${order}`)
+                    .then(res => res.json())
+                    .then(data => setEvents(data))
+                    .catch(err => console.error('Error fetching events:', err));
+            })
             .catch(err => console.error('Error RSVPing:', err));
     };
 
