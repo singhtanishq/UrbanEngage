@@ -19,7 +19,7 @@ const Volunteers = () => {
 
     useEffect(() => {
         fetchVolunteers();
-    }, [filterCategory, sortBy, order, fetchVolunteers]);
+    }, [filterCategory, sortBy, order]);
 
     const fetchVolunteers = () => {
         let url = `${process.env.REACT_APP_PORT_URL}/volunteers?sortBy=${sortBy}&order=${order}`;
@@ -56,13 +56,7 @@ const Volunteers = () => {
                 }
                 setSuccessMessage('You have been successfully registered!');
                 fetchVolunteers();
-                setNewVolunteer({
-                    name: '',
-                    email: '',
-                    category: '',
-                    experience: '',
-                    availability: ''
-                });
+                resetNewVolunteerForm();
                 setTimeout(() => setSuccessMessage(''), 3000);
             })
             .catch(err => {
@@ -70,6 +64,16 @@ const Volunteers = () => {
                 setErrorMessage('An error occurred while registering. Please try again.');
             });
         }
+    };
+
+    const resetNewVolunteerForm = () => {
+        setNewVolunteer({
+            name: '',
+            email: '',
+            category: '',
+            experience: '',
+            availability: ''
+        });
     };
 
     return (
@@ -105,7 +109,6 @@ const Volunteers = () => {
                         </div>
                     </>
                 )}
-        
             </div>
                 
             {formVisible ? (
