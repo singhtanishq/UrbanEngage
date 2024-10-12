@@ -17,7 +17,6 @@ const Volunteers = () => {
     const [sortBy, setSortBy] = useState('createdAt');
     const [order, setOrder] = useState('desc');
 
-    // Memoize the fetchVolunteers function using useCallback
     const fetchVolunteers = useCallback(() => {
         let url = `${process.env.REACT_APP_PORT_URL}/volunteers?sortBy=${sortBy}&order=${order}`;
         if (filterCategory) url += `&category=${filterCategory}`;
