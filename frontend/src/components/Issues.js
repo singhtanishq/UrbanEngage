@@ -15,7 +15,7 @@ const Issues = () => {
 
     useEffect(() => {
         fetchIssues();
-    }, [sortBy, order]);
+    }, [sortBy, order, fetchIssues]);
 
     const fetchIssues = () => {
         fetch(`${process.env.REACT_APP_PORT_URL}/issues?sortBy=${sortBy}&order=${order}`)
