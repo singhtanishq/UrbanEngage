@@ -2,7 +2,7 @@
 
 Urban Engage is an innovative e-governance platform designed to facilitate communication and interaction between citizens and local authorities. The platform offers various modules to improve civic engagement, issue reporting, and community building.
 
-To visit the deployed application [Clicke Here](https://urbanengage.netlify.app/) &nbsp; (Desktop recommended).
+To visit the deployed application [Click here](https://urbanengage.netlify.app/) &nbsp; (Desktop recommended)
 <br><br>
 ## Table of Contents
 
