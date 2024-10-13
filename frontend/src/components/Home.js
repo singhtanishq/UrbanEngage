@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import './Home.css';
 
 const Home = () => {
@@ -77,13 +78,13 @@ const Home = () => {
         </div>
 
         <div className="main-container">
-          <a href='/issues' className="box normal">Issues</a>
-          <a href='/dashboard' className="box double">Dashboard</a>
-          <a href='/petitions' className="box normal">Petitions</a>
-          <a href='/forums' className="box normal">Forums</a>
-          <a href='/events' className="box normal">Events</a>
-          <a href='/volunteers' className="box normal">Volunteers</a>
-          <a href='/polls' className="box normal">Polls</a>
+          <Link to='/issues' className="box normal">Issues</Link>
+          <Link to='/dashboard' className="box double">Dashboard</Link>
+          <Link to='/petitions' className="box normal">Petitions</Link>
+          <Link to='/forums' className="box normal">Forums</Link>
+          <Link to='/events' className="box normal">Events</Link>
+          <Link to='/volunteers' className="box normal">Volunteers</Link>
+          <Link to='/polls' className="box normal">Polls</Link>
         </div>
 
         <div className="search-container">
