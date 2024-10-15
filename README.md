@@ -1,4 +1,4 @@
-# Urban Engage
+# Urban Engage: An e-Governance Platform
 
 Urban Engage is an innovative e-governance platform designed to facilitate communication and interaction between citizens and local authorities. The platform offers various modules to improve civic engagement, issue reporting, and community building.
 
