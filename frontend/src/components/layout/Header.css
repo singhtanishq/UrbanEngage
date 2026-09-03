@@ -1,0 +1,215 @@
+/* ---------- Header ---------- */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--dur-med), box-shadow var(--dur-med), background var(--dur-med);
+}
+
+.header--scrolled {
+    border-bottom-color: var(--border);
+    box-shadow: 0 4px 24px rgba(12, 20, 32, 0.06);
+    background: rgba(255, 255, 255, 0.94);
+}
+
+.header__inner {
+    height: var(--header-h);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-5);
+}
+
+.header__brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    flex-shrink: 0;
+}
+
+.header__logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--brand-500), var(--brand-800));
+    color: #fff;
+    display: grid;
+    place-items: center;
+    box-shadow: var(--shadow-brand);
+}
+
+.header__brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+}
+
+.header__brand-text strong {
+    font-family: var(--font-display);
+    font-size: 16.5px;
+    color: var(--ink-950);
+    letter-spacing: -0.02em;
+}
+
+.header__brand-text small {
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    background: var(--bg-subtle);
+    border: 1px solid var(--border);
+    padding: 4px;
+    border-radius: var(--radius-full);
+}
+
+.header__link {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--ink-600);
+    padding: 7px 13px;
+    border-radius: var(--radius-full);
+    transition: all var(--dur-fast) var(--ease-out);
+    white-space: nowrap;
+}
+
+.header__link:hover {
+    color: var(--ink-950);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.header__link--active {
+    background: var(--ink-950);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(12, 20, 32, 0.22);
+}
+
+.header__link--active:hover {
+    color: #fff;
+    background: var(--ink-950);
+}
+
+.header__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex-shrink: 0;
+}
+
+.header__account {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--ink-700);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 7px 14px;
+    border-radius: var(--radius-full);
+    border: 1.5px solid var(--border);
+    background: var(--bg-raised);
+    transition: all var(--dur-fast) var(--ease-out);
+}
+
+.header__account:hover {
+    border-color: var(--brand-400);
+    color: var(--brand-700);
+    transform: translateY(-1px);
+}
+
+.header__account--active {
+    border-color: var(--brand-500);
+    color: var(--brand-700);
+}
+
+.header__avatar {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--brand-500), var(--brand-800));
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    display: grid;
+    place-items: center;
+}
+
+.header__burger {
+    display: none;
+    background: var(--bg-raised);
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    color: var(--ink-800);
+}
+
+/* Mobile drawer */
+.header__drawer {
+    position: fixed;
+    inset: var(--header-h) 0 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(16px);
+    padding: var(--space-5);
+    overflow-y: auto;
+    animation: fadeIn 220ms var(--ease-out) both;
+    z-index: 890;
+}
+
+.drawer__link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    color: var(--ink-800);
+    font-size: 16px;
+    animation: fadeUp 400ms var(--ease-out) both;
+}
+
+.drawer__link:hover {
+    background: var(--bg-subtle);
+}
+
+.drawer__link--active {
+    background: var(--brand-50);
+    color: var(--brand-700);
+}
+
+@media (max-width: 1080px) {
+    .header__nav {
+        display: none;
+    }
+
+    .header__burger {
+        display: grid;
+    }
+
+    .header__account-label {
+        display: none;
+    }
+}
+
+@media (max-width: 420px) {
+    .header__brand-text small {
+        display: none;
+    }
+}
+
+@media (min-width: 1081px) {
+    .header__drawer {
+        display: none;
+    }
+}

@@ -1,0 +1,155 @@
+/* ============================================================
+   Petitions — cards with goal progress, sign interaction
+   ============================================================ */
+
+.petitions-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-raised);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 9px 14px;
+    width: min(340px, 100%);
+    color: var(--text-faint);
+    transition: border-color var(--dur-fast), box-shadow var(--dur-fast);
+}
+
+.petitions-search:focus-within {
+    border-color: var(--brand-500);
+    box-shadow: 0 0 0 4px rgba(10, 147, 112, 0.12);
+}
+
+.petitions-search input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+    background: transparent;
+    color: var(--ink-900);
+}
+
+.petition-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--bg-raised);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--dur-med) var(--ease-out), box-shadow var(--dur-med), border-color var(--dur-med);
+}
+
+.petition-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-400), var(--brand-700));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--dur-slow) var(--ease-out);
+}
+
+.petition-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(10, 147, 112, 0.35);
+}
+
+.petition-card--signed::before,
+.petition-card:hover::before {
+    transform: scaleX(1);
+}
+
+.petition-card--signed {
+    border-color: rgba(10, 147, 112, 0.45);
+    background: linear-gradient(180deg, var(--brand-50), var(--bg-raised) 42%);
+}
+
+.petition-card__badges {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-4);
+}
+
+.petition-pct {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--brand-700);
+    letter-spacing: -0.02em;
+}
+
+.petition-deadline {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--warning);
+    background: var(--warning-bg);
+    border-radius: var(--radius-full);
+    padding: 5px 11px;
+}
+
+.petition-card__title {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.petition-card__desc {
+    font-size: 14px;
+    color: var(--text-soft);
+    line-height: 1.6;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: var(--space-4);
+}
+
+.petition-card__progress {
+    margin-bottom: var(--space-4);
+}
+
+.petition-card__progress-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-3);
+    margin-top: 9px;
+    font-size: 13px;
+    color: var(--text-soft);
+    flex-wrap: wrap;
+}
+
+.petition-card__progress-meta strong {
+    color: var(--ink-950);
+    font-size: 14.5px;
+}
+
+.petition-card__signers {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12.5px;
+    color: var(--text-faint);
+}
+
+.petition-card__sign {
+    width: 100%;
+}
+
+.petition-card__date {
+    margin-top: var(--space-3);
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-faint);
+}

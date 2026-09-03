@@ -1,0 +1,14 @@
+# dependencies
+node_modules/
+
+# environment secrets (never commit real values)
+.env
+.env.local
+.env.production
+
+# build output
+frontend/build/
+
+# logs & OS noise
+*.log
+.DS_Store

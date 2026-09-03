@@ -1,0 +1,115 @@
+/* ============================================================
+   Urban Engage — Design Tokens
+   Single source of truth for color, type, space, motion.
+   ============================================================ */
+
+:root {
+    /* Brand — civic teal & emerald */
+    --brand-50: #edfdf7;
+    --brand-100: #d3f9ea;
+    --brand-200: #a8f1d7;
+    --brand-300: #71e4bf;
+    --brand-400: #3ccfa5;
+    --brand-500: #16b589;
+    --brand-600: #0a9370;
+    --brand-700: #0a755c;
+    --brand-800: #0b5d4a;
+    --brand-900: #0a4c3e;
+
+    --accent-300: #fcd34d;
+    --accent-400: #fbbf24;
+    --accent-500: #f59e0b;
+    --accent-600: #d97706;
+
+    /* Ink (deep navy) */
+    --ink-50: #f6f8fa;
+    --ink-100: #eceff3;
+    --ink-200: #d9e0e8;
+    --ink-300: #b7c2cf;
+    --ink-400: #8a99ac;
+    --ink-500: #66788e;
+    --ink-600: #506076;
+    --ink-700: #3f4d60;
+    --ink-800: #2b3648;
+    --ink-900: #18202f;
+    --ink-950: #0c1420;
+
+    /* Semantic */
+    --bg: #f4f7f6;
+    --bg-raised: #ffffff;
+    --bg-subtle: #eef4f2;
+    --text: var(--ink-900);
+    --text-soft: var(--ink-600);
+    --text-faint: var(--ink-400);
+    --border: #e3eae8;
+    --border-strong: #c9d6d2;
+
+    --success: #0a9370;
+    --success-bg: #e5f8f0;
+    --danger: #dc2626;
+    --danger-bg: #feecec;
+    --warning: #d97706;
+    --warning-bg: #fef4e2;
+    --info: #0369a1;
+    --info-bg: #e3f3fc;
+
+    /* Category colors (issues, polls, events) */
+    --cat-general: #0369a1;
+    --cat-general-bg: #e3f3fc;
+    --cat-infrastructure: #c2570c;
+    --cat-infrastructure-bg: #fdeddc;
+    --cat-safety: #b91c5c;
+    --cat-safety-bg: #fde5ef;
+    --cat-environment: #0a9370;
+    --cat-environment-bg: #e5f8f0;
+    --cat-technology: #6d28d9;
+    --cat-technology-bg: #efe9fd;
+    --cat-health: #dc2626;
+    --cat-health-bg: #feecec;
+    --cat-education: #1d4ed8;
+    --cat-education-bg: #e5edfe;
+    --cat-community: #0a755c;
+    --cat-community-bg: #e5f8f0;
+    --cat-governance: #92400e;
+    --cat-governance-bg: #fdf0dd;
+
+    /* Typography */
+    --font-display: 'Sora', 'Inter', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+    /* Space */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 48px;
+    --space-8: 64px;
+    --space-9: 96px;
+
+    /* Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --radius-xl: 26px;
+    --radius-full: 999px;
+
+    /* Shadows */
+    --shadow-xs: 0 1px 2px rgba(12, 20, 32, 0.05);
+    --shadow-sm: 0 1px 2px rgba(12, 20, 32, 0.05), 0 2px 8px rgba(12, 20, 32, 0.05);
+    --shadow-md: 0 2px 4px rgba(12, 20, 32, 0.04), 0 8px 24px rgba(12, 20, 32, 0.09);
+    --shadow-lg: 0 4px 8px rgba(12, 20, 32, 0.05), 0 18px 44px rgba(12, 20, 32, 0.13);
+    --shadow-brand: 0 8px 24px rgba(10, 147, 112, 0.28);
+
+    /* Motion */
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --dur-fast: 160ms;
+    --dur-med: 320ms;
+    --dur-slow: 560ms;
+
+    /* Layout */
+    --container: 1200px;
+    --header-h: 68px;
+}
