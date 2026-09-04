@@ -1,17 +1,23 @@
 <div align="center">
 
-# 🏙 Urban Engage
+<img src="frontend/src/assets/logo.png" alt="Urban Engage Logo" width="100">
 
-### 🌐 An e-Governance Platform — Connecting Citizens, Communities & Local Authorities
+# Urban Engage
+
+### An e-Governance Platform — Connecting Citizens, Communities & Local Authorities
 
 Urban Engage is a modern e-governance platform designed to make civic participation more accessible, transparent, and interactive. It provides citizens with a single digital space to report civic issues, participate in discussions, discover community events, support petitions, vote in polls, and contribute to local initiatives.
 
-[![🚀 View Live Project](https://img.shields.io/badge/🚀%20View%20Live%20Project-Urban%20Engage-0f172a?style=for-the-badge)](https://urbanengage.netlify.app/)
+<p align="center">
+  <a href="https://urbanengage.netlify.app/">
+    <img src="https://img.shields.io/badge/▶%20VIEW%20LIVE%20PROJECT-Urban%20Engage-ffffff?style=for-the-badge&labelColor=C49A3A&color=8F3030" alt="View Live Project">
+  </a>
+</p>
 
 [![Frontend](https://img.shields.io/badge/Frontend-React%2018-61DAFB?style=flat-square&logo=react&logoColor=white)](https://react.dev/)
-[![Backend](https://img.shields.io/badge/Backend-Node.js%20%2B%20Express-339933?style=flat-square&logo=node.js&logoColor=white)](https://expressjs.com/)
-[![Database](https://img.shields.io/badge/Database-MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
-[![Deployment](https://img.shields.io/badge/Deployed-Netlify%20%2B%20Render-00C7B7?style=flat-square)](https://www.netlify.com/)
+[![Backend](https://img.shields.io/badge/Backend-Node.js%20%2B%20Express-6C63FF?style=flat-square&logo=node.js&logoColor=white)](https://expressjs.com/)
+[![Database](https://img.shields.io/badge/Database-MongoDB-00A86B?style=flat-square&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![Deployment](https://img.shields.io/badge/Deployed-Netlify%20%2B%20Render-008C95?style=flat-square)](https://www.netlify.com/)
 
 </div>
 
@@ -70,7 +76,7 @@ The goal is to provide citizens with a single platform where they can discover w
 
 ---
 
-## 🚀 Live Project
+## 🌐 Live Project
 
 The platform is deployed and publicly accessible: **[Open Urban Engage →](https://urbanengage.netlify.app/)**
 
@@ -89,7 +95,7 @@ Database  →  MongoDB Atlas
 
 ---
 
-## ✨ Platform Highlights
+## 🧭 Platform Highlights
 
 Urban Engage combines several civic and community-focused workflows into one application.
 
@@ -401,7 +407,7 @@ The reusable UI layer includes components such as `Button`, `Modal`, `Badge`, `A
 
 ---
 
-## ♿ Accessibility
+## ◈ Accessibility
 
 Accessibility and interaction quality are considered throughout the frontend.
 
@@ -417,7 +423,7 @@ The application includes:
 
 ---
 
-## 🧱 Technology Stack
+## ⚙ Technology Stack
 
 **Frontend**
 
@@ -542,7 +548,7 @@ Local MongoDB (localhost:27017)
 
 ---
 
-## 🧰 Installation & Setup
+## 📦 Installation & Setup
 
 ### Prerequisites
 
@@ -639,7 +645,7 @@ npm start
 
 The frontend will be available at `http://localhost:3000`.
 
-### 🍎 macOS Note
+###  macOS Note
 
 On macOS, AirPlay Receiver listens on port `5000`. The bundled development configuration therefore uses port `5050` for the Urban Engage API.
 
@@ -786,7 +792,7 @@ The frontend API client reads the backend base URL from `REACT_APP_API_URL`, whi
 
 ---
 
-## 🚀 Deployment
+## &#x2601; Deployment
 
 ### Backend — Render
 
@@ -1150,7 +1156,7 @@ Distributed under the MIT License. See the `LICENSE` file for more information.
 
 **🌐 Explore Urban Engage**
 
-[🚀 View the Live Project](https://urbanengage.netlify.app/)
+[View the Live Project](https://urbanengage.netlify.app/)
 
 **Frontend:** Netlify · **Backend:** Render · **Database:** MongoDB Atlas
 
