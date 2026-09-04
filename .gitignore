@@ -9,6 +9,9 @@ node_modules/
 # build output
 frontend/build/
 
+# MongoDB backup / database dump
+mongo-backup/
+
 # logs & OS noise
 *.log
 .DS_Store
