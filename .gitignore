@@ -17,3 +17,4 @@ mongo-backup/
 .DS_Store
 
 #others
+auto-push.sh
