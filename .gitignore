@@ -15,3 +15,5 @@ mongo-backup/
 # logs & OS noise
 *.log
 .DS_Store
+
+#others
